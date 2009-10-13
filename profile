@@ -36,6 +36,15 @@ export PATH=$PATH:$SCALA_HOME/bin
 # plt scheme
 export PATH=$PATH:"/Applications/PLT Scheme v4.2.1/bin"
 
+unjar() {
+   BASE=`basename $@`
+   DIR=`dirname $@`
+   cp $@ $DIR/_$BASE.zip
+   mkdir $DIR/_$BASE
+   unzip $DIR/_$BASE.zip -d $DIR/_$BASE
+   rm $DIR/_$BASE.zip
+}
+
 alias jrake='jruby -S rake'
 alias hg='history | grep '
 alias clrepl='rlwrap java -server -Xmx1624m -cp ~/bin/clojure_1.0.0/clojure.jar:/Users/ddonnell/projects/clojure-contrib/clojure-contrib.jar clojure.lang.Repl'
