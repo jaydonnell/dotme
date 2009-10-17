@@ -45,6 +45,13 @@ unjar() {
    rm $DIR/_$BASE.zip
 }
 
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1="\w\$(parse_git_branch) $ "
+
 alias jrake='jruby -S rake'
 alias hg='history | grep '
 alias clrepl='rlwrap java -server -Xmx1624m -cp ~/bin/clojure_1.0.0/clojure.jar:/Users/ddonnell/projects/clojure-contrib/clojure-contrib.jar clojure.lang.Repl'
+alias pg='ps ax | grep'
+
