@@ -7,6 +7,13 @@ export PATH=$PATH:/usr/local/mysql/bin
 # jruby
 export PATH=$PATH:~/bin/jruby-1.3.1/bin
 
+# ant
+export ANT_HOME=~/bin/apache-ant-1.7.1
+export PATH="$ANT_HOME/bin:$PATH"
+
+# cascading
+export CASCADING_HOME=/Users/ddonnell/bin/cascading
+
 # ec2
 export EC2_HOME=~/bin/ec2-api-tools-1.3-34128
 export PATH=$PATH:$EC2_HOME/bin
@@ -48,3 +55,8 @@ unjar() {
 alias jrake='jruby -S rake'
 alias hg='history | grep '
 alias clrepl='rlwrap java -server -Xmx1624m -cp ~/bin/clojure_1.0.0/clojure.jar:/Users/ddonnell/projects/clojure-contrib/clojure-contrib.jar clojure.lang.Repl'
+
+# make bash autocomplete with up arrow
+# add to your ~/.profile
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
