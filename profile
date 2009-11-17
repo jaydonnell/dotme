@@ -12,7 +12,7 @@ export ANT_HOME=~/bin/apache-ant-1.7.1
 export PATH="$ANT_HOME/bin:$PATH"
 
 # cascading
-export CASCADING_HOME=/Users/ddonnell/bin/cascading
+export CASCADING_HOME=~/bin/cascading
 
 # ec2
 export EC2_HOME=~/bin/ec2-api-tools-1.3-34128
@@ -37,7 +37,7 @@ export PATH=$PATH:$HADOOP_HOME/bin
 export CATALINA_OPTS="-server -Xmx1024m"
 
 # scala
-export SCALA_HOME="/Users/ddonnell/bin/scala-2.7.5.final"
+export SCALA_HOME="~/bin/scala-2.7.5.final"
 export PATH=$PATH:$SCALA_HOME/bin
 
 # plt scheme
@@ -54,7 +54,7 @@ unjar() {
 
 alias jrake='jruby -S rake'
 alias hg='history | grep '
-alias clrepl='rlwrap java -server -Xmx1624m -cp ~/bin/clojure_1.0.0/clojure.jar:/Users/ddonnell/projects/clojure-contrib/clojure-contrib.jar clojure.lang.Repl'
+alias clrepl='rlwrap java -server -Xmx1624m -cp ~/bin/clojure_1.0.0/clojure.jar:~/projects/clojure-contrib/clojure-contrib.jar clojure.lang.Repl'
 
 # make bash autocomplete with up arrow
 # add to your ~/.profile
