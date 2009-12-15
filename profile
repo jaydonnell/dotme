@@ -51,11 +51,16 @@ unjar() {
    rm $DIR/_$BASE.zip
 }
 
-alias jrake='jruby -S rake'
-alias hg='history | grep '
-alias clrepl='rlwrap java -server -Xmx1624m -cp ~/bin/clojure_1.0.0/clojure.jar:~/projects/clojure-contrib/clojure-contrib.jar clojure.lang.Repl'
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1="\w\$(parse_git_branch) $ "
 
 # make bash autocomplete with up arrow
 # add to your ~/.profile
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
+
+alias clrepl='rlwrap java -server -Xmx1624m -cp ~/bin/clojure_1.0.0/clojure.jar:/Users/ddonnell/projects/clojure-contrib/clojure-contrib.jar clojure.lang.Repl'
+alias hg='history | grep '
+alias pg='ps ax | grep'
