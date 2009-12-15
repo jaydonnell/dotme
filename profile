@@ -1,11 +1,17 @@
 export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
+# ruby
+export PATH=$PATH:~/.gem/ruby/1.8/bin
+
 # mysql (mac)
 export PATH=$PATH:/usr/local/mysql/bin
 
 # jruby
 export PATH=$PATH:~/bin/jruby-1.3.1/bin
+
+# groovy
+export PATH=$PATH:~/bin/groovy-1.6.7/bin
 
 # ant
 export ANT_HOME=~/bin/apache-ant-1.7.1
@@ -35,13 +41,6 @@ export PATH=$PATH:$HADOOP_HOME/bin
 
 # tomcat
 export CATALINA_OPTS="-server -Xmx1024m"
-
-# scala
-export SCALA_HOME="~/bin/scala-2.7.5.final"
-export PATH=$PATH:$SCALA_HOME/bin
-
-# plt scheme
-export PATH=$PATH:"/Applications/PLT Scheme v4.2.1/bin"
 
 unjar() {
    BASE=`basename $@`
