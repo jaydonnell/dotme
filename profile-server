@@ -1,0 +1,31 @@
+export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+
+# ruby
+export PATH=$PATH:~/.gem/ruby/1.8/bin
+
+# ant
+export ANT_HOME=~/bin/apache-ant-1.7.1
+export PATH="$ANT_HOME/bin:$PATH"
+
+unjar() {
+   BASE=`basename $@`
+   DIR=`dirname $@`
+   cp $@ $DIR/_$BASE.zip
+   mkdir $DIR/_$BASE
+   unzip $DIR/_$BASE.zip -d $DIR/_$BASE
+   rm $DIR/_$BASE.zip
+}
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1="\w\$(parse_git_branch) $ "
+
+# make bash autocomplete with up arrow
+# add to your ~/.profile
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
+alias hg='history | grep '
+alias pg='ps ax | grep'
